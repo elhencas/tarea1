@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\portfoliocontroller;
+use App\Http\Controllers\mensajescontrolador;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,16 +15,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-$portfolio=[
-    ['title'=>'proyecto #1'],
-    ['title'=>'proyecto #2'],
-    ['title'=>'proyecto #3'],
-    ['title'=>'proyecto #4'],
-];
 
 
-Route::view('/','home',)->name('home');
-Route::view('about','about',)->name('about');
-Route::view('portfolio','portfolio',compact('portfolio'))->name('portfolio');
-Route::view('contact','contact',)->name('contact');
+Route::view('/','home')->name('home');
+Route::view('about','about')->name('about');
+Route::get('portfolio',[portfoliocontroller::class,'index'])->name('portfolio');
+Route::view('contact','contact')->name('contact');
+
+Route::post('contact', [mensajescontrolador::class,'store']);
+
 

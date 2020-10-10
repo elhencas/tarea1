@@ -4,18 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>@yield('title')</title>
+    <title>@yield('title','tarea1')</title>
+    <style>
+        .active a{
+            color:red;
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
     <h1>Este es mi home</h1>
-    <nav>
-    <ul>
-        <li><a href="{{ route('home') }}">home</a></li>
-        <li><a href="{{ route('portfolio') }}">portfolio</a></li>
-        <li><a href="{{ route('about') }}">about</a></li>
-        <li><a href="{{ route('contact') }}">contact</a></li>
-    </ul>
-</nav>
+@include('partials.nav')
 @yield('content')
 </body>
 </html>
