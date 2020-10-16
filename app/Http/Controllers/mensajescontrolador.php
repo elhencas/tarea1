@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\MensajeRecibido;
+
+use Illuminate\support\facades\Mail;
 
 
 class mensajescontrolador extends Controller
@@ -16,6 +19,11 @@ class mensajescontrolador extends Controller
             'email'=>'required'
         ]);
 
+        /// enviar el email
+
+            Mail::to('henrycastropz@gmail.com')->send(new MensajeRecibido);
+
         return ('Datos validados');
     }
 }
+
