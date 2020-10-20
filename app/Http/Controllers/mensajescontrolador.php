@@ -14,16 +14,18 @@ class mensajescontrolador extends Controller
     {
 
 
-        request()->validate([
+        $msg=request()->validate([
             'name'=>'required',
-            'email'=>'required'
+            'email'=>'required',
+            'subject'=>'required',
+            'content'=>'required'
         ]);
 
         /// enviar el email
 
-            Mail::to('henrycastropz@gmail.com')->send(new MensajeRecibido);
+            Mail::to('henrycastropz@gmail.com')->queue(new MensajeRecibido($msg));
 
-        return ('Datos validados');
+        return 'Mensaje enviado';
     }
 }
 
