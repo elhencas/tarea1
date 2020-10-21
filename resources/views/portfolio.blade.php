@@ -7,7 +7,8 @@
 
     <ul>
         @forelse($portfolio as $portfolioitem)
-            <li>{{ $portfolioitem['title']}} <pre> {{ $loop->last ? 'Es el ultimo' : '' }}</pre> </li>
+            <li>{{ $portfolioitem['title']}} : <strong> {{$portfolioitem['description'] }} </strong>  {{$portfolioitem['created_at'] }}</li>
+
 
         @empty
             <li>No hay proyectos para mostrar</li>
