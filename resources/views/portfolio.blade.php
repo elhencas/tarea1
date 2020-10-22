@@ -6,8 +6,8 @@
     <h1>Portfolio</h1>
 
     <ul>
-        @forelse($portfolio as $portfolioitem)
-            <li>{{ $portfolioitem['title']}} : <strong> {{$portfolioitem['description'] }} </strong>  {{$portfolioitem['created_at'] }}</li>
+        @forelse($projectdatos as $projectitem)
+            <li>{{ $projectitem->title}} : <strong> {{$projectitem->description }} </strong>  {{$projectitem->created_at->diffForHumans() }}</li>
 
 
         @empty
@@ -15,6 +15,7 @@
 
         @endforelse
 
+       <li> {{ $projectdatos->links() }} </li>
 
 
     </ul>

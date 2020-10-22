@@ -15,9 +15,10 @@ class portfoliocontroller extends Controller
      */
     public function index()
     {
-        $portfolio= Project::lastest()->get();
 
-       return view('portfolio',compact('portfolio'));
+       return view('portfolio',[
+           'projectdatos'=>Project::latest('updated_at')->paginate()
+       ]);
     }
 
     /**
