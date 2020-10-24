@@ -19,7 +19,9 @@ use App\Http\Controllers\mensajescontrolador;
 
 Route::view('/','home')->name('home');
 Route::view('about','about')->name('about');
-Route::get('portfolio',[portfoliocontroller::class,'index'])->name('portfolio');
+Route::get('projects',[portfoliocontroller::class,'index'])->name('projects');
+Route::get('projects/{id}',[portfoliocontroller::class,'show'])->name('projects.show');
+
 Route::view('contact','contact')->name('contact');
 
 Route::post('contact', [mensajescontrolador::class,'store']);
