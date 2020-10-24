@@ -16,7 +16,7 @@ class portfoliocontroller extends Controller
     public function index()
     {
 
-       return view('portfolio',[
+       return view('projects.index',[
            'projectdatos'=>Project::latest('updated_at')->paginate()
        ]);
     }
@@ -40,7 +40,11 @@ class portfoliocontroller extends Controller
      */
     public function show($id)
     {
-        //
+
+
+        return view('projects.show',[
+            'projectdatos'=>Project::findOrFail($id)
+        ]);
     }
 
     /**
