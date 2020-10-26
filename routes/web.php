@@ -1,7 +1,6 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\portfoliocontroller;
+use App\Http\Controllers\projectcontroller;
 use App\Http\Controllers\mensajescontrolador;
 
 /*
@@ -19,8 +18,8 @@ use App\Http\Controllers\mensajescontrolador;
 
 Route::view('/','home')->name('home');
 Route::view('about','about')->name('about');
-Route::get('projects',[portfoliocontroller::class,'index'])->name('projects');
-Route::get('projects/{id}',[portfoliocontroller::class,'show'])->name('projects.show');
+Route::get('projects',[projectcontroller::class,'index'])->name('projects');
+Route::get('projects/{id}',[projectcontroller::class,'show'])->name('projects.show');
 
 Route::view('contact','contact')->name('contact');
 

@@ -1,9 +1,9 @@
 @section('content')
-    <h1>Portfolio</h1>
+    <h1>Proyectos</h1>
 
     <ul>
-        @forelse($projectdatos as $projectitem)
-            <li> <a href="{{ route('portfolio.show',$projectitem) }} "> {{$projectitem->title}}</a>     {{$projectitem->created_at->diffForHumans() }}</li>
+        @forelse($project as $projectitem)
+            <li> <a href="{{ route('projects.show',$projectitem) }} "> {{$projectitem->title}}</a>     {{$projectitem->created_at->diffForHumans() }}</li>
 
 
         @empty
@@ -11,7 +11,7 @@
 
         @endforelse
 
-       <li> {{ $projectdatos->links() }} </li>
+       <li> {{ $project->links() }} </li>
 
 
     </ul>

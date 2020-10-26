@@ -6,7 +6,7 @@ use App\Models\Project;
 
 use Illuminate\Http\Request;
 
-class portfoliocontroller extends Controller
+class projectcontroller extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,7 +17,7 @@ class portfoliocontroller extends Controller
     {
 
        return view('projects.index',[
-           'projectdatos'=>Project::latest('updated_at')->paginate()
+           'project'=>Project::latest('updated_at')->paginate()
        ]);
     }
 
@@ -43,7 +43,7 @@ class portfoliocontroller extends Controller
 
 
         return view('projects.show',[
-            'projectdatos'=>Project::findOrFail($id)
+            'project'=>Project::findOrFail($id)
         ]);
     }
 
