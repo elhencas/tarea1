@@ -43,7 +43,7 @@ class projectcontroller extends Controller
 
 
         return view('projects.show',[
-            'project'=>Project::findOrFail($id)
+            'projectdatos'=>Project::findOrFail($id)
         ]);
     }
 
