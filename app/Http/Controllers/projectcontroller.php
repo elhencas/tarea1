@@ -16,9 +16,9 @@ class projectcontroller extends Controller
     public function index()
     {
 
-       return view('projects.index',[
-         'projectdatos'=>Project::latest('updated_at')->paginate()
-       ]);
+        $projectdatos=Project::latest('updated_at')->paginate();
+
+       return view('projects.index',compact('projectdatos'));
     }
 
     /**

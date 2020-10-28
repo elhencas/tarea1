@@ -1,3 +1,6 @@
+@extends('layout')
+
+
 @section('content')
     <h1>Proyectos</h1>
 
