@@ -2,8 +2,8 @@
     <h1>Proyectos</h1>
 
     <ul>
-        @forelse($project as $projectitem)
-            <li> <a href="{{ route('projects.show',$projectitem) }} "> {{$projectitem->title}}</a>     {{$projectitem->created_at->diffForHumans() }}</li>
+        @forelse($projectdatos as $projectitems)
+            <li> <a href="{{ route('projects.show',$projectitems) }} "> {{$projectitems->title}}</a>     {{$projectitems->created_at->diffForHumans() }}</li>
 
 
         @empty
@@ -11,7 +11,7 @@
 
         @endforelse
 
-       <li> {{ $project->links() }} </li>
+       <li> {{ $projectdatos->links() }} </li>
 
 
     </ul>
