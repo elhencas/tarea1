@@ -30,6 +30,14 @@ class projectcontroller extends Controller
     public function store(Request $request)
     {
         //
+        return request();
+
+    }
+
+    public function create()
+    {
+        //
+        return view('projects.create');
     }
 
     /**
@@ -38,13 +46,9 @@ class projectcontroller extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Project $project)
     {
-
-
-        return view('projects.show',[
-            'projectitems'=>Project::findOrFail($id)
-        ]);
+             return view('projects.show',$project);
     }
 
     /**

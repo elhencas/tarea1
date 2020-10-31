@@ -19,7 +19,11 @@ use App\Http\Controllers\mensajescontrolador;
 Route::view('/','home')->name('home');
 Route::view('about','about')->name('about');
 Route::get('projects',[projectcontroller::class,'index'])->name('projects');
-Route::get('projects/{id}',[projectcontroller::class,'show'])->name('projects.show');
+Route::get('projects/crear',[projectcontroller::class,'create'])->name('projects.create');
+
+Route::post('projects',[projectcontroller::class,'store'])->name('projects.store');
+Route::get('projects/{project}',[projectcontroller::class,'show'])->name('projects.show');
+
 
 Route::view('contact','contact')->name('contact');
 

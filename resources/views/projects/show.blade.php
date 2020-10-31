@@ -1,10 +1,10 @@
 @extends('layout')
 
-@section('title',$projectitems->title)
+@section('title',$title )
 
 @section('content')
-  <h1> {{$projectitems->title}} </h1>
-  <p>  {{$projectitems->description }} </p>
-  <p>  {{$projectitems->created_at->diffForhumans() }} </p>
+  <h1> {{$title}} </h1>
+  <p>  {{$description }} </p>
+  <p>  {{$created_at }} </p>
 
 @endsection
