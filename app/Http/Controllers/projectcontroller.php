@@ -27,16 +27,30 @@ class projectcontroller extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store()
     {
         //
-        return request();
+
+        $fields = request()->validate([
+            'title'=>'required',
+            'description'=>'required',
+            'url'=>'required'
+        ]);
+
+
+
+        Project::create($fields);
+
+        return redirect()->route('projects');
 
     }
 
     public function create()
     {
         //
+
+
+
         return view('projects.create');
     }
 
@@ -58,9 +72,11 @@ class projectcontroller extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function edit(Request $request, $id)
     {
         //
+        return view('projects.edit',[$project]);
+
     }
 
     /**

@@ -1,11 +1,11 @@
 @extends('layout')
 
 
-@section('Title','Crear proyecto')
+@section('Title','Editar proyecto')
 
 
 @section('content')
-<h1>Crear Nuevo Proyecto</h1>
+<h1>Editar Nuevo Proyecto</h1>
 
 @if($errors->all())
     <ul>
